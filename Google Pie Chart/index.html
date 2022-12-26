@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	
+</head>
+<body>
+<h1>Page</h1>
+<div id="piechart"></div>
+<script>
+google.charts.load('current', {'packages': ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart(){
+let data = 
+google.visualization.arrayToDataTable([
+	['Task', 'Hours per Day'],
+	['Work', 8],
+	['Friends', 2],
+	['Eat', 2],
+	['TV', 2],
+	['Gym', 2],
+	['Sleep', 8]
+]);
+	
+let options = {'title':'My Average Day',
+'width':550, 'height':400};
+
+let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+chart.draw(data, options);
+}	
+</script>	
+</body>
+</html>

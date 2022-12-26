@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.one{
+height: 60%;
+width: 60%;
+background-color: blue;
+position: absolute;
+z-index: -1;
+}
+
+.image{
+height: 60%;
+width: 100%;
+background-color: black;
+background-image: url("image/unnamed.jpg");
+position: absolute;
+z-index: 0;
+}
+
+.arrow{
+color: white;
+background-color: grey;
+}
+
+.arrow:hover{
+background-color: black;
+}
+
+#left{
+position: absolute;
+left: 0;
+margin-top: 45%;
+margin-bottom: 45%;
+width: 10%;
+height: 10%;
+}
+
+#right{
+position: absolute;
+right: 0;
+margin-top: 45%;
+margin-bottom: 45%;
+width: 10%;
+height: 10%;
+}
+
+.dots{
+height: 20%;
+width: 100%;
+position: absolute;
+z-index: 0;	
+background-color: yellow;
+margin-top: 60%;
+}
+
+.dot{
+border-radius: 50%;
+background-color: grey;	
+position: absolute;
+z-index: 1;
+width: 10%;
+height: 10%;
+margin-left: 10%;
+margin-top: 10%;
+float: left;
+display: inline-block;
+}
+
+.dot:hover{
+background-color: black;		
+}
+
+</style>
+</head>
+<body>
+<h2>Slide show</h2>
+<div class="one">
+<div class="image">
+<div class="arrow" id="left">Return</div>
+<div class="arrow" id="right">Next</div>
+</div>
+<div class="dots">
+<a class="dot"></a>
+<a class="dot"></a>
+<a class="dot"></a>
+<a class="dot"></a>
+</div>
+</div>
+<script>
+	let path = 'image/';
+	let imageList = [];
+	
+	imageList[0] = 'unnamed.jpg';
+	imageList[1] = 'unnamed(1).jpg';
+	imageList[2] = 'sprzedam-pieski-531395887.jpg';
+	imageList[3] = 'Plakat-91x61-cm-piesek-pieski-szczeniaczki.jpg';	
+	imageList[4] = 'maxresdefault.jpg';
+	imageList[5] = 'dog-puppys-af02c507f66902317c439,860,0,0,0.jpg';
+	imageList[6] = 'a6a02f2cbac83c0dae49a1cdbc5a3a22.jpg';
+	
+	let i = 0;
+	
+	document.getElementById('right').addEventListener('click', function() {
+		document.querySelector('.image').style.backgroundImage = "url(" + path + imageList[i++] + ")";
+		alert(path + imageList[i]);
+	});
+	
+</script>
+</body>
+</html>

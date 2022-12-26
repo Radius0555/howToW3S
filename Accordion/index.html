@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+<button class="section" id="1">Sekcja 1</button><br>
+<p id="t1" style="display: none">Tekst 1</p>
+<button class="section" id="2">Sekcja 2</button><br>
+<p id="t2" style="display: none">Tekst 2</p>
+<button class="section" id="3">Sekcja 3</button><br>
+<p id="t3" style="display: none">Tekst 3</p>
+
+<script>
+$(".section").click(function(event){
+	let id = event.target.id;
+		$("#t"+id).toggle("fast");
+});
+</script>	
+</body>
+</html>
